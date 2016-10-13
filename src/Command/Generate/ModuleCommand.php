@@ -268,7 +268,7 @@ class ModuleCommand extends Command
 
         try {
             $module = $input->getOption('module') ?
-              $this->validateModuleName(
+              $this->validator->validateModuleName(
                   $input->getOption('module')
               ) : null;
         } catch (\Exception $error) {
@@ -290,7 +290,7 @@ class ModuleCommand extends Command
 
         try {
             $machineName = $input->getOption('machine-name') ?
-              $this->validateModule(
+              $this->validator->validateModule(
                   $input->getOption('machine-name')
               ) : null;
         } catch (\Exception $error) {
